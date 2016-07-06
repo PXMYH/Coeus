@@ -1,0 +1,73 @@
+* Note: Quandl Financial Ratios Database DMDRN is no longer being updated!!!
+
+Indicator Name	                                             Indicator Code
+All Financial Ratios	                                   ALLFINANCIALRATIOS
+Book Debt to Capital Ratio	                                     BOOK_DC
+Book Value of Assets	                                           BV_ASSETS
+Book Value of Equity	                                           BV_EQTY
+Capital Expenditures	                                           CAPEX
+Cash as Percentage of Firm Value	                               CASH_FV
+Cash as Percentage of Revenues	                                     CASH_REV
+Cash as Percentage of Total Assets	                               CASH_ASSETS
+Cash	                                                             CASH
+Change in Non-Cash Working Capital	                               CHG_NCWC
+Correlation with the Market	                                     CORREL
+Current PE Ratio	                                                 PE_CURR
+Depreciation	                                                       DEPREC
+Dividend Yield	                                                 DIV_YLD
+Dividends	                                                       DIV
+Earnings Before Interest and Taxes	                               EBIT
+Earnings Before Interest Taxes Depreciation and Amortization	       EBITDA
+EBIT for Previous Period	EBIT_1T
+Effective Tax Rate on Income	EFF_TAX_INC
+Effective Tax Rate	EFF_TAX
+Enterprise Value	EV
+EV to Book Value Ratio	EV_BV
+EV to EBIT Ratio	EV_EBIT
+EV to EBITDA Ratio	EV_EBITDA
+EV to Invested Capital Ratio	EV_CAP
+EV To Sales Ratio	EV_SALES
+EV to Trailing Sales Ratio	EV_SALESTR
+Expected Growth in Earnings Per Share	EPS_GRO_EXP
+Expected Growth in Revenues	REV_GRO_EXP
+Firm Value	FIRM_VAL
+Forward Earnings Per Share	EPS_FWD
+Forward PE Ratio	PE_FWD
+Free Cash Flow to Firm	FCFF
+Growth in Earnings Per Share	EPS_GRO
+Hi-Lo Risk	HILO
+Insider Holdings	INSIDER
+Institutional Holdings	INST_HOLD
+Invested Capital	INV_CAP
+Market Capitalization	MKT_CAP
+Market Debt to Capital Ratio	MKT_DC
+Market Debt to Equity Ratio	MKT_DE
+Net Income	NET_INC
+Net Margin	NET_MARG
+Non-Cash Working Capital as Percentage of Revenues	NCWC_REV
+Non-Cash Working Capital	NCWC
+Number of Shares Outstanding	FLOAT
+Payout Ratio	PAYOUT
+PE to Growth Ratio	PE_G
+Pre-Tax Operating Margin	OP_MARG
+Previous Year Growth in Revenues	REV_GRO
+Price to Book Value Ratio	P_BV
+Price to Sales Ratio	P_S
+Ratio of Fixed Assets to Total Assets	FIXED_TOT
+Ratio of Intangible Assets to Total Assets	INTANG_TOT
+Reinvestment Amount	REINV
+Reinvestment Rate	REINV_RATE
+Return on Capital	ROC
+Return on Equity	ROE
+Revenues	REV_LAST
+Sales General and Administration Expenses	SGA
+Stock Price	STOCK_PX
+Total Debt	TOT_DEBT
+Trading Volume	TRAD_VOL
+Trailing 12-month Revenues	REV_12M
+Trailing Net Income	NET_INC_TRAIL
+Trailing PE Ratio	PE_TRAIL
+Trailing Revenues	REV_TRAIL
+Value Line Beta	BETA_VL
+3-Year Regression Beta	BETA
+3-year Standard Deviation of Stock Price	STDEV

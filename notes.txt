@@ -1,0 +1,11 @@
+# Quandl database
+  * free member rate limit of 2000 calls per 10 minutes
+  * anonymous 50 calls per day
+
+
+
+
+# Todo:
+  * make retriving data from Quandl more generic, e.g. functions take in ticker
+    symbol and fetch data 
+  * 
