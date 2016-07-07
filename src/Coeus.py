@@ -14,6 +14,10 @@
 #import pressReleaseCrawler
 #from fundamentalData import fundamental_data_engine as fde
 from technicalAnalysis import technical_analysis_engine
+
+import csv
+import numpy as np
+from _csv import reader
     
 def main():
     # TODO: move the ticker list to a separate configuration file
@@ -67,9 +71,59 @@ def main():
     #fde.get_all_filings('20160101')  
     #fde.build_company_list("/home/atlantis/nest/Coeus/res/cik.lst")
     
+    res_folder = "/home/atlantis/projects/Coeus/res/"
+    input_file_name = "tickers.csv"
+    output_primary_stock = "primary_stocklist.txt"
+    output_secondary_stock = "secondary_stocklist.txt"
+    ticker_file = open(res_folder + input_file_name, 'rt')
+    ticker_l = []
+    try:
+        reader = csv.reader(ticker_file)
+        for row in reader:
+            ticker_l.append(row[0])
+        print ticker_l
+    finally:
+        ticker_file.close()
+    
     # technical analysis
     ta = technical_analysis_engine()
-    ta.get_correlation('YHOO', 'CIEN', '2015-07-06', '2016-07-06')
+    
+    # get ticker list
+    for idx_primary in range (0, len(ticker_l)):   # TODO: logic is disgusting, fix!
+        primary_stock = ticker_l[idx_primary]
+        for idx_secondary in range(idx_primary + 1, len(ticker_l)):
+            secondary_stock = ticker_l[idx_secondary]
+            print "primary stock is " + str(primary_stock)
+            print "secondary stock is " + str(secondary_stock)
+            
+            corr = ta.get_correlation(str(primary_stock), str(secondary_stock), '2013-07-01', '2013-07-03')
+    
+            # collect stocks have strong correlation
+            primary_stock_l = []
+            secondary_stock_l = []
+            if abs(corr) > 0.75:
+                primary_stock_l.append(primary_stock)
+                secondary_stock_l.append(secondary_stock)
+                
+    print "final list of strong correlation"
+    for j in primary_stock_l:
+        for k in secondary_stock_l:
+            print(j, k)
+    
+    
+    target = open(res_folder +  output_primary_stock, 'w')
+    print "Opening the file " + res_folder +  output_primary_stock
+    target.write("primary stocks:")
+    target.write(primary_stock_l)
+    target.close()
+    
+    
+    target = open(res_folder +  output_secondary_stock, 'w')
+    print "Opening the file " + res_folder +  output_secondary_stock
+    target.write("secondary stocks:")
+    target.write(secondary_stock_l)
+    target.close()
+    
     
 if __name__ == '__main__':
     main()

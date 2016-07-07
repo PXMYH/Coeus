@@ -42,12 +42,22 @@ class technical_analysis_engine():
         primary_stock_price_history_l = self.__get_history_stock(ticker_primary, start_date, end_date)
         print "primary stock history " + str(primary_stock_price_history_l)
         secondary_stock_price_history_l = self.__get_history_stock(ticker_secondary, start_date, end_date)
+        print "secondary stock history " + str(secondary_stock_price_history_l)
         
-        # get pearson coefficient
-        corr_coeff, corr_p = pearsonr(primary_stock_price_history_l, secondary_stock_price_history_l)
         
-        print "correlation between " + str(ticker_primary) + " and " + str(ticker_secondary) + " = " + str(corr_coeff)
-        print "correlation p = " + str(corr_p)
+        if len(secondary_stock_price_history_l) == 0:
+            print "empty list!"
+        # error handling
+        if len(primary_stock_price_history_l) == 0 or len(secondary_stock_price_history_l) == 0: # TODO: change to try, catch later
+            corr_coeff = 0
+            corr_p = 0
+            print "inside!"
+        else:
+            # get pearson coefficient
+            corr_coeff, corr_p = pearsonr(primary_stock_price_history_l, secondary_stock_price_history_l)
+            
+            print "correlation between " + str(ticker_primary) + " and " + str(ticker_secondary) + " = " + str(corr_coeff)
+            print "correlation p = " + str(corr_p)
         
         return corr_coeff
         
