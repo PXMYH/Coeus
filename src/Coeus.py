@@ -12,9 +12,8 @@
 #import fundamentalData as fundData
 #import newsChaser
 #import pressReleaseCrawler
-from fundamentalData import fundamental_data_engine as fde
-
-
+#from fundamentalData import fundamental_data_engine as fde
+from technicalAnalysis import technical_analysis_engine
     
 def main():
     # TODO: move the ticker list to a separate configuration file
@@ -65,9 +64,12 @@ def main():
     # analyze the press release
     
     # get fundamental data
-    fde.get_all_filings('20160101')  
-    #fde.build_company_list("/home/atlantis/nest/Coeus/res/cik.lst") 
-
+    #fde.get_all_filings('20160101')  
+    #fde.build_company_list("/home/atlantis/nest/Coeus/res/cik.lst")
+    
+    # technical analysis
+    ta = technical_analysis_engine()
+    ta.get_correlation('YHOO', 'CIEN', '2015-07-06', '2016-07-06')
     
 if __name__ == '__main__':
     main()
